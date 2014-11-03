@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <div>Selecting</div>
+                <ul>
+                    <li><a href="/api/product/316">Single</a></li>
+                    <li><a href="/api/product/?productname=nut">Many</a></li>
+                    <li><a href="/api/product/?productname=nut&pagenumber=2&recordcount=2">Many with paging</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>Stored Procedures</div>
+                <ul>
+                    <li>
+                        <a href="/api/employeemanagers?businessentityid=250">Select</a>
+                    </li>
+                    <li>
+                        <a href="http://kenny-bu.blogspot.com/2012/12/using-petapoco-with-sql-server-stored.html">Using return value (external)</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
