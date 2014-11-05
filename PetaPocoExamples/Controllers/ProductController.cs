@@ -4,7 +4,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using PetaPoco;
-using PetaPocoExamples.Models;
 
 namespace PetaPocoExamples.Controllers
 {
@@ -32,6 +31,7 @@ namespace PetaPocoExamples.Controllers
         // POST api/<controller>
         public void Post([FromBody]string value)
         {
+
         }
 
         // PUT api/<controller>/5
