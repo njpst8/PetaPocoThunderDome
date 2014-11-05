@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using System.Linq;
-using PetaPocoExamples.Models;
 
-namespace PetaPocoExamples.Controllers
+namespace PetaPocoExamples.Models
 {
     public class GetProductsByName
     {

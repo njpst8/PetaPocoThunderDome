@@ -1,4 +1,4 @@
-﻿namespace PetaPocoExamples.Controllers
+﻿namespace PetaPocoExamples.Models
 {
     public class EmployeeManager
     {

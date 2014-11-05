@@ -1,7 +1,6 @@
 using PetaPoco;
-using PetaPocoExamples.Models;
 
-namespace PetaPocoExamples.Controllers
+namespace PetaPocoExamples.Models
 {
     public class GetProductByNameWithPaging
     {
