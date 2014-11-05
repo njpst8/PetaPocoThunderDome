@@ -10,8 +10,12 @@ namespace PetaPocoExamples.Controllers
         {
             var db = new PetaPoco.Database("example");
 
-            var product = db.Query<Product>("WHERE name like @0", "%" + productName + "%").ToList();
+            var product = db.Fetch<Product>("WHERE name like @0", "%" + productName + "%");
             return product;
         }
+
+        /*
+         * db.Query vs db.Fetch 
+         */
     }
 }
