@@ -122,6 +122,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EmployeeManager.cs" />
     <Compile Include="Controllers\EmployeeManagersController.cs" />
+    <Compile Include="Controllers\GetProductById.cs" />
+    <Compile Include="Controllers\GetProductByNameWithPaging.cs" />
+    <Compile Include="Controllers\GetProductsByName.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">

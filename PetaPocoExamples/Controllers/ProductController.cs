@@ -1,43 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using PetaPoco;
 using PetaPocoExamples.Models;
 
 namespace PetaPocoExamples.Controllers
 {
     public class ProductController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
         public HttpResponseMessage Get(int id)
         {
-            var db = new PetaPoco.Database("example");
-            var product = db.SingleOrDefault<Product>("WHERE ProductId = @0", id);
+            ////Get single record
+            var product = new GetProductById().Execute(id);
             return Request.CreateResponse(HttpStatusCode.OK, product);
         }
 
-        // GET api/<controller>/5
         public HttpResponseMessage Get(string  productName)
         {
-            var db = new PetaPoco.Database("example");
-            var product = db.Query<Product>("WHERE name like @0", "%"+productName+"%").ToList();
+            var product = new GetProductsByName().Execute(productName);
             return Request.CreateResponse(HttpStatusCode.OK, product);
         }
-
 
         public HttpResponseMessage Get(string productName, int pageNumber, int recordCount)
         {
-            var db = new PetaPoco.Database("example");
-            var product = db.Page<Product>(pageNumber, recordCount, "WHERE name like @0 order by name",
-                "%" + productName + "%");
+            var product = new GetProductByNameWithPaging().Execute(productName, pageNumber, recordCount);
             return Request.CreateResponse(HttpStatusCode.OK, product.Items);
         }
 
