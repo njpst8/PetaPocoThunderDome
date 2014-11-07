@@ -14,7 +14,7 @@ namespace PetaPocoExamples.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, product);
         }
 
-        public HttpResponseMessage Get(string  productName)
+        public HttpResponseMessage Get(string productName)
         {
             var product = new GetProductsByName().Execute(productName);
             return Request.CreateResponse(HttpStatusCode.OK, product);
@@ -27,14 +27,16 @@ namespace PetaPocoExamples.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody] ProductToCreate productToCreate)
         {
-
+            
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] ProductToCreate productToCreate)
         {
+            var product = Product.Create(productToCreate);
+            new UpsertProduct().Execute(product);
         }
 
         // DELETE api/<controller>/5

@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using PetaPoco;
+using PetaPocoExamples.Controllers;
 
 namespace PetaPocoExamples.Models
 {
     [TableName("Production.Product")]
     public class Product
     {
-
         public int ProductId { get; set; }
         public string Name { get; set; }
         public string ProductNumber { get; set; }
@@ -35,5 +32,35 @@ namespace PetaPocoExamples.Models
         public DateTime DiscontinuedDate { get; set; }
         public Guid rowguid { get; set; }
         public DateTime ModifiedDate { get; set; }
+
+        public static Product Create(ProductToCreate x)
+        {
+            return new Product
+            {
+                Name = x.Name,
+                ProductNumber = x.ProductNumber,
+                MakeFlag = x.MakeFlag,
+                FinishedGoodsFlag = x.FinishedGoodsFlag,
+                Color = x.Color,
+                SafetyStockLevel = x.SafetyStockLevel,
+                ReorderPoint = x.ReorderPoint,
+                StandardCost = x.StandardCost,
+                ListPrice = x.ListPrice,
+                Size = x.Size,
+                SizeUnitMeasureCode = x.SizeUnitMeasureCode,
+                WeightUnitMeasureCode = x.WeightUnitMeasureCode,
+                Weight = x.Weight,
+                DaysToManufacture = x.DaysToManufacture,
+                ProductLine = x.ProductLine,
+                Class = x.Class,
+                Style = x.Style,
+                ProductSubcategoryId = x.ProductSubcategoryId,
+                ProductModelId = x.ProductModelId,
+                SellStartDate = x.SellStartDate,
+                SellEndDate = x.SellEndDate,
+                DiscontinuedDate = x.DiscontinuedDate,
+                ModifiedDate = x.ModifiedDate
+            };
+        }
     }
 }

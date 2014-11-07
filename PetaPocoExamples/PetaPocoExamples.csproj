@@ -143,6 +143,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ProductToCreate.cs" />
     <Compile Include="Controllers\ProductV2Controller.cs" />
     <Compile Include="DI\Bindings.cs" />
     <Compile Include="DI\Container.cs" />
