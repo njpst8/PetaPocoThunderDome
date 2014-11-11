@@ -9,7 +9,8 @@ namespace PetaPocoExamples.Models
     {
         public int ProductId { get; set; }
         public string Name { get; set; }
-        public string ProductNumber { get; set; }
+        [Column("ProductNumber")]
+        public string The_property_formally_known_as_ProductNumber { get; set; }
         public bool MakeFlag { get; set; }
         public bool FinishedGoodsFlag { get; set; }
         public string Color { get; set; }
@@ -32,13 +33,15 @@ namespace PetaPocoExamples.Models
         public DateTime DiscontinuedDate { get; set; }
         public Guid rowguid { get; set; }
         public DateTime ModifiedDate { get; set; }
+        [Ignore]
+        public string Please_do_not_try_to_bind_this_column { get; set; }
 
         public static Product Create(ProductToCreate x)
         {
             return new Product
             {
                 Name = x.Name,
-                ProductNumber = x.ProductNumber,
+                The_property_formally_known_as_ProductNumber = x.ProductNumber,
                 MakeFlag = x.MakeFlag,
                 FinishedGoodsFlag = x.FinishedGoodsFlag,
                 Color = x.Color,
