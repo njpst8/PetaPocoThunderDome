@@ -62,7 +62,8 @@ namespace PetaPocoExamples.Models
                 SellStartDate = x.SellStartDate,
                 SellEndDate = x.SellEndDate,
                 DiscontinuedDate = x.DiscontinuedDate,
-                ModifiedDate = x.ModifiedDate
+                ModifiedDate = x.ModifiedDate,
+                rowguid = x.rowguid
             };
         }
     }
